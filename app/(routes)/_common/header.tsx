@@ -75,12 +75,12 @@ const Header = () => {
                   shrink-0 rounded-full"
                   >
                     <AvatarImage
-                      src={user?.picture || ""}
-                      alt={user?.given_name || ""}
+                      src={user?.picture ?? undefined}
+                      alt={user?.given_name || "User"}
                     />
-                    <AvatarFallback className="rounded-lg">
-                      {user?.given_name?.charAt(0)}
-                      {user?.family_name?.charAt(0)}
+                    <AvatarFallback className="rounded-lg bg-primary text-primary-foreground">
+                      {user?.given_name?.charAt(0) || user?.email?.charAt(0) || "U"}
+                      {user?.family_name?.charAt(0) || ""}
                     </AvatarFallback>
                   </Avatar>
                 </DropdownMenuTrigger>
