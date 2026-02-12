@@ -46,7 +46,7 @@ interface Message {
  */
 function zodToJsonSchema(schema: z.ZodType): any {
   if (schema instanceof z.ZodObject) {
-    const shape = (schema as any)._def.shape() as Record<string, z.ZodType>;
+    const shape = (schema as any)._def.shape as Record<string, z.ZodType>;
     const properties: any = {};
     const required: string[] = [];
 

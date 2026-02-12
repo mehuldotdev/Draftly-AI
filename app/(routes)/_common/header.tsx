@@ -77,7 +77,7 @@ const Header = () => {
                     {user?.picture ? (
                       <>
                         <AvatarImage
-                          src={user.picture}
+                          src={user.picture.replace("d=blank", "d=monsterid")}
                           alt={user?.given_name || "User"}
                         />
                         <AvatarFallback delayMs={0} className="rounded-full bg-primary text-primary-foreground font-medium">
