@@ -40,7 +40,7 @@ export const regenerateFrame = inngest.createFunction(
       `;
 
       const result = await generateText({
-        model: "google/gemini-3-pro-preview",
+        model: "google/gemini-flash-1.5-8b:free",
         system: GENERATION_SYSTEM_PROMPT,
         tools: {
           searchUnsplash: unsplashTool,
