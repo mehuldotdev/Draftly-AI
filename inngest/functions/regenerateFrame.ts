@@ -1,4 +1,4 @@
-import { generateText, stepCountIs } from "ai";
+import { generateText, stepCountIs } from "@/lib/ai-utils";
 import { inngest } from "../client";
 //import { openrouter } from "@/lib/openrouter";
 import { GENERATION_SYSTEM_PROMPT } from "@/lib/prompt";

@@ -1,12 +1,10 @@
 "use server";
-import { google } from '@ai-sdk/google';
-// import { openrouter } from "@/lib/openrouter";
-import { generateText } from "ai";
+import { generateText } from "@/lib/ai-utils";
 
 export async function generateProjectName(prompt: string) {
   try {
     const { text } = await generateText({
-      model: google('gemini-1.5-flash-latest'),
+      model: "google/gemini-1.5-flash-latest",
       system: `
         You are an AI assistant that generates very very short project names based on the user's prompt.
         - Keep it under 5 words.

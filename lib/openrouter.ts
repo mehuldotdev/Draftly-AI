@@ -1,6 +1,7 @@
-import { createOpenAI } from '@ai-sdk/openai';
-
-export const openrouter = createOpenAI({
-  baseURL: "https://openrouter.ai/api/v1",
-  apiKey: process.env.OPENROUTER_API_KEY, 
-});
+/**
+ * OpenRouter model helper
+ * Returns model identifier for use with direct API calls
+ */
+export function openrouter(model: string): string {
+  return model;
+}

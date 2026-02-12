@@ -1,7 +1,7 @@
-import { tool } from "ai";
+import { createTool } from "@/lib/ai-utils";
 import { z } from "zod";
 
-export const unsplashTool = tool({
+export const unsplashTool = createTool({
   description:
     "Search for high-quality images from Unsplash.  Use this when you need to add an <img> tag.",
   inputSchema: z.object({

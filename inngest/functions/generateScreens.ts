@@ -1,5 +1,4 @@
-import { generateObject, generateText, stepCountIs } from "ai";
-import { google } from "@ai-sdk/google";
+import { generateObject, generateText, stepCountIs } from "@/lib/ai-utils";
 import { inngest } from "../client";
 import { z } from "zod";
 import { openrouter } from "@/lib/openrouter";
