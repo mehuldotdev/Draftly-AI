@@ -74,13 +74,15 @@ const Header = () => {
                     className="h-8 w-8
                   shrink-0 rounded-full"
                   >
-                    <AvatarImage
-                      src={user?.picture ?? undefined}
-                      alt={user?.given_name || "User"}
-                    />
-                    <AvatarFallback className="rounded-lg bg-primary text-primary-foreground">
-                      {user?.given_name?.charAt(0) || user?.email?.charAt(0) || "U"}
-                      {user?.family_name?.charAt(0) || ""}
+                    {user?.picture && (
+                      <AvatarImage
+                        src={user.picture}
+                        alt={user?.given_name || "User"}
+                      />
+                    )}
+                    <AvatarFallback delayMs={0} className="rounded-full bg-primary text-primary-foreground font-medium">
+                      {user?.given_name?.charAt(0)?.toUpperCase() || user?.email?.charAt(0)?.toUpperCase() || "U"}
+                      {user?.family_name?.charAt(0)?.toUpperCase() || ""}
                     </AvatarFallback>
                   </Avatar>
                 </DropdownMenuTrigger>
