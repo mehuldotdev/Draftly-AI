@@ -74,16 +74,23 @@ const Header = () => {
                     className="h-8 w-8
                   shrink-0 rounded-full"
                   >
-                    {user?.picture && (
-                      <AvatarImage
-                        src={user.picture}
-                        alt={user?.given_name || "User"}
-                      />
+                    {user?.picture ? (
+                      <>
+                        <AvatarImage
+                          src={user.picture}
+                          alt={user?.given_name || "User"}
+                        />
+                        <AvatarFallback delayMs={0} className="rounded-full bg-primary text-primary-foreground font-medium">
+                          {user?.given_name?.charAt(0)?.toUpperCase() || user?.email?.charAt(0)?.toUpperCase() || "U"}
+                          {user?.family_name?.charAt(0)?.toUpperCase() || ""}
+                        </AvatarFallback>
+                      </>
+                    ) : (
+                      <div className="flex size-full items-center justify-center rounded-full bg-primary text-primary-foreground font-medium">
+                        {user?.given_name?.charAt(0)?.toUpperCase() || user?.email?.charAt(0)?.toUpperCase() || "U"}
+                        {user?.family_name?.charAt(0)?.toUpperCase() || ""}
+                      </div>
                     )}
-                    <AvatarFallback delayMs={0} className="rounded-full bg-primary text-primary-foreground font-medium">
-                      {user?.given_name?.charAt(0)?.toUpperCase() || user?.email?.charAt(0)?.toUpperCase() || "U"}
-                      {user?.family_name?.charAt(0)?.toUpperCase() || ""}
-                    </AvatarFallback>
                   </Avatar>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-56" align="end">
