@@ -21,6 +21,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head><script data-domain="draftly-ai-eta.vercel.app"
+data-site-id="P-1ARZZJDAVIGRHJO3U0HQ7" src="https://r4xctaue.insforge.site/js/pixel.js" defer></script></head>
       <body className={`${jostSans.className} antialiased`}>
         <QueryProvider>
           <ThemeProvider
